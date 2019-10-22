@@ -9,12 +9,12 @@ global.grapevine = [];
 // Schemas
 const GrapevineSchema = new mongoose.Schema({
   message: String,
-  createdAt: String
+  createdAt: Date
 })
 
 
 // Creates a collection API
-const GrapevineCollection = mongoose.model('Sample', GrapevineSchema)
+const GrapevineCollection = mongoose.model('grapevine', GrapevineSchema)
 
 
 // Gets all from Grape schema
@@ -28,8 +28,8 @@ const getOneGrape = (id) => {
 }
 
 // Creates a new Grape
-const createGrap = (newGrape) => {
-  return GrapevineCollection.create(newGrape);;
+const createGrape = (newGrape) => {
+  return GrapevineCollection.create(newGrape);
 }
 
 // Edit a Grape
@@ -47,7 +47,7 @@ const deleteGrape = (id) => {
 module.exports = {
   getAllGrapes,
   getOneGrape,
-  createGrap,
+  createGrape,
   editGrape,
   deleteGrape
 }
