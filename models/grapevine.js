@@ -2,10 +2,6 @@
 const mongoose = require('./connection.js')
 
 
-// Global variable to act as in a memory database
-global.grapevine = [];
-
-
 // Schemas
 const GrapevineSchema = new mongoose.Schema({
   message: String,

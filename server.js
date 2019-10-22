@@ -5,7 +5,7 @@ const methodOverride = require('method-override')
 
 
 // Imports routers from controllers
-const { grapevineRouter } = require('./controllers/controller.js')
+const { grapevineRouter } = require('./controllers/grapevine.js')
 
 
 // Middleware registration
