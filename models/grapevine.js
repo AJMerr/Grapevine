@@ -65,10 +65,13 @@ const createUser = (newUser) => {
 
 // Edit user
 const editUser = (id, newUserData) => {
-  return UserCollection.update({_id: id}, newUserData)
+  return UserCollection.update({_id: id}, newUserData);
 }
 
-// 
+// Delete User
+const deleteUser = (id) => {
+  return UserCollection.deleteOne({_id: id});
+}
 
 
 // Exports all functions
@@ -77,5 +80,10 @@ module.exports = {
   getOneGrape,
   createGrape,
   editGrape,
-  deleteGrape
+  deleteGrape,
+  getAllUsers,
+  getOneUser,
+  createUser,
+  editUser,
+  deleteUser
 }
