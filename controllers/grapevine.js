@@ -10,6 +10,7 @@ const grapevineApi = require('../models/grapevine.js')
 const grapevineRouter = express.Router()
 
 
+// Functions for normal messaging
 // Gets all from Grapevine Schema  
 grapevineRouter.get('/grapevine', (req, res) => {
   grapevineApi.getAllGrapes()
@@ -22,7 +23,7 @@ grapevineRouter.get('/grapevine', (req, res) => {
 grapevineRouter.get('/grapevine/:id', (req, res) => {
   grapevineApi.getOneGrape(req.params.id)
   .then((oneGrape) => {
-    res.json(oneGrape)
+    res.json(oneGrape);
   })
 })
 
@@ -30,7 +31,7 @@ grapevineRouter.get('/grapevine/:id', (req, res) => {
 grapevineRouter.post('/grapevine', (req, res) => {
   grapevineApi.createGrape(req.body)
   .then((newGrape) => {
-    res.json(newGrape)
+    res.json(newGrape);
   })
 })
 
@@ -38,7 +39,7 @@ grapevineRouter.post('/grapevine', (req, res) => {
 grapevineRouter.put('/grapevine/:id', (req, res) => {
   grapevineApi.editGrape(req.params.id, req.body)
   .then((editedGrape) => {
-    res.json(editedGrape)
+    res.json(editedGrape);
   })
 })
 
@@ -46,7 +47,49 @@ grapevineRouter.put('/grapevine/:id', (req, res) => {
 grapevineRouter.delete('/grapevine/:id', (req, res) => {
   grapevineApi.deleteGrape(req.params.id) 
   .then((deletedGrape) => {
-    res.json(deletedGrape)
+    res.json(deletedGrape);
+  })
+})
+
+
+// Functions for the User sign up
+// Gets all users
+grapevineRouter.get('/users', (req, res) => {
+  grapevineApi.getAllUsers()
+  .then((allUsers) => {
+    res.json(allUsers);
+  })
+})
+
+// Gets a user
+grapevineRouter.get('/users', (req, res) => {
+  grapevineApi.getOneUser(req.params.id)
+  .then((oneUser) => {
+    res.json(oneUser);
+  })
+})
+
+// Creates a user
+grapevineRouter.post('/users', (req, res) => {
+  grapevineApi.createUser(req.body)
+  .then((newUser) => {
+    res.json(newUser);
+  })
+})
+
+// Edits a user
+grapevineRouter.put('/users', (req, res) => {
+  grapevineApi.editUser(req.params.id, req.body)
+  .then((editedUser) => {
+    res.json(editedUser);
+  })
+})
+
+// Delete user
+grapevineRouter.delete('users', (req, res) => {
+  grapevineApi.deleteUser(req.params.id)
+  .then((deletedUser) => {
+    res.json(deletedUser)
   })
 })
 
