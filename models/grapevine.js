@@ -8,11 +8,19 @@ const GrapevineSchema = new mongoose.Schema({
   createdAt: Date
 })
 
+const UserSchema = new mongoose.Schema({
+  userAge: Number,
+  userEmail: String
+})
+
 
 // Creates a collection API
 const GrapevineCollection = mongoose.model('grapevine', GrapevineSchema)
 
+const UserCollection = mongoose.model('user', UserSchema)
 
+
+// Functions for the Message Schema
 // Gets all from Grape schema
 const getAllGrapes = () => {
   return GrapevineCollection.find({});
@@ -37,6 +45,30 @@ const editGrape = (id, newGrape) => {
 const deleteGrape = (id) => {
   return GrapevineCollection.deleteOne({_id: id});
 }
+
+
+// Functions for the User Schema
+// Get all users
+const getAllUsers = () => {
+  return UserCollection.find({});
+}
+
+// Get a single user
+const getOneUser = (id) => {
+  return UserCollection.findById(id);
+}
+
+// Create user
+const createUser = (newUser) => {
+  return UserCollection.create(newUser);
+}
+
+// Edit user
+const editUser = (id, newUserData) => {
+  return UserCollection.update({_id: id}, newUserData)
+}
+
+// 
 
 
 // Exports all functions
