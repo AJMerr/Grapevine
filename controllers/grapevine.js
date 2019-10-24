@@ -15,7 +15,7 @@ const grapevineRouter = express.Router()
 grapevineRouter.get('/grapevine', (req, res) => {
   grapevineApi.getAllGrapes()
     .then((allGrapes) => {
-      res.json(allGrapes);
+      res.render("allGrapes", {allGrapes});
     })
 })      
 
