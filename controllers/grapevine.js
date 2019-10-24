@@ -9,6 +9,11 @@ const grapevineApi = require('../models/grapevine.js')
 // Creates a new router
 const grapevineRouter = express.Router()
 
+// Router for new messages
+grapevineRouter.get('/grapevine/new', (req, res) => {
+  res.render("createGrape")
+})
+
 
 // Functions for normal messaging
 // Gets all from Grapevine Schema  
@@ -31,7 +36,7 @@ grapevineRouter.get('/grapevine/:id', (req, res) => {
 grapevineRouter.post('/grapevine', (req, res) => {
   grapevineApi.createGrape(req.body)
   .then((newGrape) => {
-    res.json(newGrape);
+    res.redirect('/grapevine');
   })
 })
 
