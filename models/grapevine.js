@@ -14,8 +14,6 @@ const UserSchema = new mongoose.Schema({
 })
 
 
-
-
 // Creates a collection API
 const GrapevineCollection = mongoose.model('grapevine', GrapevineSchema)
 
