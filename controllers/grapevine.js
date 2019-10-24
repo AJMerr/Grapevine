@@ -86,7 +86,7 @@ grapevineRouter.put('/users/:id', (req, res) => {
 })
 
 // Delete user
-grapevineRouter.delete('users/:id', (req, res) => {
+grapevineRouter.delete('/users/:id', (req, res) => {
   grapevineApi.deleteUser(req.params.id)
   .then((deletedUser) => {
     res.json(deletedUser)
