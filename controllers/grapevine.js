@@ -62,7 +62,7 @@ grapevineRouter.get('/users', (req, res) => {
 })
 
 // Gets a user
-grapevineRouter.get('/users', (req, res) => {
+grapevineRouter.get('/users/:id', (req, res) => {
   grapevineApi.getOneUser(req.params.id)
   .then((oneUser) => {
     res.json(oneUser);
@@ -78,7 +78,7 @@ grapevineRouter.post('/users', (req, res) => {
 })
 
 // Edits a user
-grapevineRouter.put('/users', (req, res) => {
+grapevineRouter.put('/users/:id', (req, res) => {
   grapevineApi.editUser(req.params.id, req.body)
   .then((editedUser) => {
     res.json(editedUser);
@@ -86,7 +86,7 @@ grapevineRouter.put('/users', (req, res) => {
 })
 
 // Delete user
-grapevineRouter.delete('users', (req, res) => {
+grapevineRouter.delete('users/:id', (req, res) => {
   grapevineApi.deleteUser(req.params.id)
   .then((deletedUser) => {
     res.json(deletedUser)
