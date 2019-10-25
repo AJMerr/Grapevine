@@ -1,13 +1,14 @@
+<header> 
+    Grape<span class="v">Vine</span>
+    <nav>
+    <a href="grapevine/new"> Plant grape </a>
+
+    <a href="grapevine/users"> Sign up! </a>
+    </nav>
+</header>
+
 {{#each allGrapes}}
 
-   <ul><li>{{message}}</li></ul> 
+   <div class="messages"> {{message}} </div>
 
 {{/each}}
-
-<a href="grapevine/new">
-    <button>Plant grape</button>
-</a>
-
-<a href="grapevine/users">
-    <button>Sign up!</button>
-</a>
