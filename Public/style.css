@@ -110,3 +110,12 @@ input[type=submit] {
     letter-spacing: 0px;
     transition: all 0.2s;
 }
+
+input[type=date] {
+    background: #fff;
+    border: 7px solid #5bbd73;
+    border-radius: 40px;
+    box-shadow: 0px 5px 1px #ccc;
+    margin: 10px 0 25px 0;
+    padding: 10px;
+}
