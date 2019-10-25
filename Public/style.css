@@ -88,11 +88,25 @@ body {
     padding: 10px;
 }
 
+#submit {
+    margin: 0 auto;
+}
+
 input[type=text] {
     background: #fff;
-    border: 7px solid #b0a1c9;
+    border: 7px solid #5bbd73;
     border-radius: 40px;
     box-shadow: 0px 5px 1px #ccc;
     margin: 10px 0 25px 0;
     padding: 10px;
+}
+
+input[type=submit] {
+    background: #5bbd73;
+    color: #fff;
+    margin: 10px;
+    padding: 15px 25px 15px 25px;
+    border-radius: 30px;
+    letter-spacing: 0px;
+    transition: all 0.2s;
 }
