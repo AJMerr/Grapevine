@@ -1,6 +1,6 @@
 # Grapevine
 
-![/wireframe.png](wireframe.png)
+![/wireframe.jpg](wireframe.jpg)
 
 ![](ERD.png)
 
