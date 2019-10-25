@@ -13,11 +13,16 @@ const UserSchema = new mongoose.Schema({
   userEmail: String
 })
 
+const FeedbackSchema = new mongoose.Schema({
+  message: String
+})
 
 // Creates a collection API
 const GrapevineCollection = mongoose.model('grapevine', GrapevineSchema)
 
 const UserCollection = mongoose.model('user', UserSchema)
+
+const FeedbackSchema = mongoose.model('feedback', FeedbackSchema)
 
 
 // Functions for the Message Schema
@@ -74,6 +79,23 @@ const deleteUser = (id) => {
 }
 
 
+// Feedback functionality 
+// Get all feedback
+const getAllFeedback = () => {
+  return FeedbackSchema.find({});
+}
+
+// Create feedback
+const createFeedback = (newFeedback) => {
+  return FeedbackSchema.create(newFeedback);
+}
+
+// Delete feedback
+const deleteFeedback = (id) => {
+  return FeedbackSchema.deleteOne({_id: id});
+}
+
+
 // Exports all functions
 module.exports = {
   getAllGrapes,
@@ -85,5 +107,8 @@ module.exports = {
   getOneUser,
   createUser,
   editUser,
-  deleteUser
+  deleteUser,
+  getAllFeedback,
+  createFeedback,
+  deleteFeedback
 }
