@@ -78,7 +78,7 @@ grapevineRouter.get('/users/:id', (req, res) => {
 grapevineRouter.post('/users', (req, res) => {
   grapevineApi.createUser(req.body)
   .then((newUser) => {
-    res.json(newUser);
+    res.redirect('/grapevine')
   })
 })
 
