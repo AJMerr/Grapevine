@@ -100,9 +100,9 @@ grapevineRouter.delete('/users/:id', (req, res) => {
 
 
 // Functions for Feedback
-grapevineRouter.get('/feedback', (req, ret) => {
-  
-})
+//grapevineRouter.get('/feedback', (req, ret) => {
+
+//})
 
 
 // Exports the router

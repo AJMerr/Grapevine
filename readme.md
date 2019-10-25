@@ -13,4 +13,4 @@ Grapevine is an anonymous messaging application. Users will be able to post mess
 - Heroku
 
 # Disclaimer
-All messages posted on Grapevine are subject to review by the Grapevine team. Any message posted is subject to removal. Examples of messages that would be subject of removal would contain racism, illegal activity, etc. 
+All messages posted on Grapevine are subject to review by the Grapevine team. Any message posted is subject to removal. Examples of messages that would be subject to removal would contain racism, illegal activity, etc.
