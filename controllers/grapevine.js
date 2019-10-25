@@ -78,7 +78,7 @@ grapevineRouter.get('/users/:id', (req, res) => {
 grapevineRouter.post('/users', (req, res) => {
   grapevineApi.createUser(req.body)
   .then((newUser) => {
-    res.redirect('/grapevine')
+    res.redirect('/grapevine');
   })
 })
 
@@ -94,15 +94,34 @@ grapevineRouter.put('/users/:id', (req, res) => {
 grapevineRouter.delete('/users/:id', (req, res) => {
   grapevineApi.deleteUser(req.params.id)
   .then((deletedUser) => {
-    res.json(deletedUser)
+    res.json(deletedUser);
   })
 })
 
 
 // Functions for Feedback
-//grapevineRouter.get('/feedback', (req, ret) => {
+grapevineRouter.get('/feedback', (req, res) => {
+  grapevineApi.getAllFeedback()
+  .then((allFeedback) => {
+    res.render("allFeedback", {allFeedback});
+  })
+})
 
-//})
+// Create feedback
+grapevineRouter.post('/feedback', (req, res) => {
+  grapevineApi.createFeedback(req.body)
+  .then((newFeedback) => {
+    res.redirect('/grapevine');
+  })
+})
+
+// Delete feedback
+grapevineRouter.delete('/feedback', (req, res) => {
+  grapevineApi.deleteFeedback(req.params.id)
+  .then((deletedFeedback) => {
+    res.json(deletedFeedback);
+  })
+})
 
 
 // Exports the router
