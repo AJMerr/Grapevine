@@ -62,7 +62,7 @@ grapevineRouter.delete('/grapevine/:id', (req, res) => {
 grapevineRouter.get('/users', (req, res) => {
   grapevineApi.getAllUsers()
   .then((allUsers) => {
-    res.json(allUsers);
+    res.render("allUsers", {allUsers});
   })
 })
 
